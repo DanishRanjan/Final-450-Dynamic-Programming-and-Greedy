@@ -22,3 +22,11 @@ public static void main(String args[]) {
 	System.out.println(dp[amount]);
 }
 }
+
+
+//4
+//2
+//3
+//5
+//6
+//10
