@@ -11,20 +11,20 @@ public static void main(String args[]) {
 		}
 	}
 	
-	int[][] dp = new int[arr.length][arr[0].length];
+	int[][] dp = new int[building][color];
 	
-	for(int j=0;j<arr[0].length;j++) {
+	for(int j=0;j<arr[0].length;j++) {   //Finding minimum in first row
 		dp[0][j] = arr[0][j]; 
 	}
 	
-	for(int i=1;i<dp.length;i++) {
+	for(int i=1;i<dp.length;i++) {                
 		for(int j=0;j<dp[0].length;j++) {
 			int min = Integer.MAX_VALUE;
 			
 			for(int k=0;k<dp[0].length;k++) {
 				if(k!=j) {
-					if(dp[i-1][k]<min) {
-						min = dp[i-1][k];
+					if(dp[i-1][k]<min) {        //checking minimum in previous row,  
+						min = dp[i-1][k];       //adding the value of arr[i]+minimum = minimum price using that color till yet
 					}
 				}
 			}
@@ -32,9 +32,9 @@ public static void main(String args[]) {
 		}
 	}
 	int min = Integer.MAX_VALUE;
-	for(int k=0;k<dp[0].length;k++) {
-		if(dp[building-1][k]<min) {
-			min = dp[building-1][k];
+	for(int i=0;i<dp[0].length;i++) {
+		if(dp[building-1][i]<min) {
+			min = dp[building-1][i];
 		}
 	}
 	System.out.println(min);
