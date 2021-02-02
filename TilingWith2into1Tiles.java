@@ -15,7 +15,7 @@ public class TilingWith2into1Tiles {
 		
 //------------------------FIBONACCI-------------------FIBONACCI-----------------------fibonacci--------------------	
 		for (int i = 3; i <= n; i++) {
-			dp[i] = dp[n - 1] + dp[n - 2]; // ek waale tarike + do waale tarike will give teen waale tarike and so on
+			dp[i] = dp[i - 1] + dp[i - 2]; // ek waale tarike + do waale tarike will give teen waale tarike and so on
 		} // Recursion
 
 		
